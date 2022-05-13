@@ -117,6 +117,8 @@ public class KeputusanServiceImpl implements IKeputusanService {
                 tbr.setRules(res.getString("rules"));
                 tbr.setJurusan(res.getString("jurusan"));
                 list.add(tbr);
+                
+                tbr = new tb_rules();
             }
         } catch (SQLException ex) {
 
@@ -173,6 +175,7 @@ public class KeputusanServiceImpl implements IKeputusanService {
             res = st.executeQuery("SELECT *FROM tb_minat");
             while (res.next()) {
                 
+                tbr = new tb_minat();
                 tbr.setNama_siswa(res.getString("nama_siswa"));
                 tbr.setAtribut(res.getString("atribut"));
                 tbr.setNilai_angka(res.getInt("nilai_angka"));
